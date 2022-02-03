@@ -65,7 +65,7 @@ public class NoteController {
     @ApiOperation(value = "create a new note")
     @PostMapping("/add")
     public ResponseEntity<NoteDto> saveNote(@Valid @RequestBody NoteDto noteDto){
-        LOGGER.info("POST /note/add newNote= " + noteDto);
+        LOGGER.info("POST /note/add newNote= " + noteDto.getId());
         Note noteRequest = modelMapper.map(noteDto, Note.class);
         Note note = noteService.saveNote(noteRequest);
         NoteDto savedNote = modelMapper.map(note, NoteDto.class);
