@@ -85,6 +85,7 @@ public class NoteController {
     @ApiOperation(value = "Delete a note")
     @GetMapping("/delete/{id}")
     public void delete(@PathVariable String id) {
+        LOGGER.info("POST /note/delete noteToDelete id = " + id);
         noteService.deleteNote(id);
     }
 
